@@ -225,6 +225,10 @@ int freq_read_files_test(Hash *hash, const char *regex)
 	return ret;
 }
 
+/* 
+ * Reads the global array `files` and calls `freq_read_file()` on each
+ * file in the array.
+ */
 int freq_read_files(Hash *hash, const char *regex)
 {
 	int ret = 0;
@@ -248,6 +252,13 @@ int filter_chars(char *buffer)
 	return 0;
 }
 
+/*
+ * Reads the file at `filename`. Finds all matches for the given
+ * regular expression and counts their frequency, storing the result
+ * in `hash`. The frequencies are multiplied by `multiplier`. Use this
+ * if you want to read multiple files and weight some more heavily
+ * than others.
+ */
 int freq_read_file(Hash *hash, const char *filename, const char *regex, int multiplier)
 {
 	int matches = 0;
