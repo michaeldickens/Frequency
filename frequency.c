@@ -1,6 +1,6 @@
 /* 
  * A C program designed to calculate frequency for given files. Main revision 
- * created 12/26/11.
+ * created 2011-12-26.
  */
 
 #include <ctype.h>
@@ -104,7 +104,7 @@ int read_file(char **buffer, uint64_t *length, const char *filename);
 #define FREQ_FIRST_DIGRAPH "([a-z]{2,2})[a-z]*"
 #define FREQ_LAST_DIGRAPH "[a-z]*([a-z]{2,2})"
 
-static const char * files[] = {
+static const char *files[] = {
 	"000bigfiles/00allProse.txt", 
 	"000bigfiles/01allCasual.txt", 
 	"000bigfiles/02allC.txt", 
@@ -115,7 +115,7 @@ static const char * files[] = {
 	"000bigfiles/04allNews.txt", 
 };
 
-static const char * files_no_prog[] = {
+static const char *files_no_prog[] = {
 	"000bigfiles/00allProse.txt", 
 	"000bigfiles/01allCasual.txt", 
 	"000bigfiles/03allFormal.txt", 
@@ -143,8 +143,6 @@ int main(int argc, char const *argv[])
 //	find_n_words(&hash, 3);
 	
 	find_n_words_for_file(&hash, "000bigfiles/0 prose/0 shakespeare DO NOT USE.txt", 2, 1);
-	
-//	freq_read_files(&hash, FREQ_NUMBERS);
 	
 	Pair *pairs;
 	size_t length;
@@ -187,7 +185,7 @@ int print_pairs_short(Pair *pairs, size_t length)
 
 int freq_read_files_programming(Hash *hash, const char *regex)
 {
-	const char * test_files[] = {
+	const char *test_files[] = {
 		"000bigfiles/02allC.txt", 
 		"000bigfiles/02allJava.txt", 
 		"000bigfiles/02allPerl.txt", 
@@ -209,7 +207,7 @@ int freq_read_files_programming(Hash *hash, const char *regex)
 
 int freq_read_files_test(Hash *hash, const char *regex)
 {
-	const char * files[] = {
+	const char *files[] = {
 		"000bigfiles/test.txt", 
 		"000bigfiles/1 net 1.txt"
 	};
